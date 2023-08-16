@@ -1,13 +1,7 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[3]:
-
-
-pip install statsmodels
-
-
-# In[31]:
+# In[32]:
 
 
 import streamlit as st
