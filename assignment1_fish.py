@@ -1,83 +1,17 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[2]:
-
-
-import pandas as pd
-import matplotlib.pyplot as plt
-from statsmodels.tsa.arima.model import ARIMA
-
-# Load and preprocess the data
-data = pd.read_csv('Fish.csv')
-# Preprocess and feature engineering steps go here
-
-# Train-test split
-train_size = int(0.8 * len(data))
-train_data = data[:train_size]
-test_data = data[train_size:]
-
-# Fit ARIMA model
-model = ARIMA(train_data['sales'], order=(p, d, q))
-model_fit = model.fit()
-
-# Make predictions for next year
-future_data = pd.DataFrame()  # Create a dataframe with future dates and relevant features
-forecast = model_fit.forecast(steps=len(future_data))
-
-# Visualize predictions
-plt.plot(train_data['timestamp'], train_data['sales'], label='Training Data')
-plt.plot(test_data['timestamp'], test_data['sales'], label='Testing Data')
-plt.plot(future_data['timestamp'], forecast, label='Predictions')
-plt.legend()
-plt.xlabel('Timestamp')
-plt.ylabel('Sales')
-plt.show()
-
-
 # In[3]:
 
 
 pip install statsmodels
 
 
-# In[4]:
+# In[31]:
 
 
-import pandas as pd
-import matplotlib.pyplot as plt
-from statsmodels.tsa.arima.model import ARIMA
-
-# Load and preprocess the data
-data = pd.read_csv('Fish.csv')
-# Preprocess and feature engineering steps go here
-
-# Train-test split
-train_size = int(0.8 * len(data))
-train_data = data[:train_size]
-test_data = data[train_size:]
-
-# Fit ARIMA model
-model = ARIMA(train_data['sales'], order=(p, d, q))
-model_fit = model.fit()
-
-# Make predictions for next year
-future_data = pd.DataFrame()  # Create a dataframe with future dates and relevant features
-forecast = model_fit.forecast(steps=len(future_data))
-
-# Visualize predictions
-plt.plot(train_data['timestamp'], train_data['sales'], label='Training Data')
-plt.plot(test_data['timestamp'], test_data['sales'], label='Testing Data')
-plt.plot(future_data['timestamp'], forecast, label='Predictions')
-plt.legend()
-plt.xlabel('Timestamp')
-plt.ylabel('Sales')
-plt.show()
-
-
-# In[5]:
-
-
+import streamlit as st
+st.title ("assignment1")
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
