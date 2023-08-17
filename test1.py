@@ -126,7 +126,7 @@ fish_features_poly = poly.transform(fish_features)
 # Predict weight
 fish_weight_prediction = model.predict(fish_features_poly)
 
-st.write('Predicted weight for', species, ':', fish_weight_prediction)
+st.write('Predicted weight for : ',fish_weight_prediction)
 
 
 # In[30]:
